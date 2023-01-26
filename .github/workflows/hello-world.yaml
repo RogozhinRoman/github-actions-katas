@@ -16,7 +16,7 @@ jobs:
     needs: Clone-down
     runs-on: ubuntu-latest
     container: gradle:6-jdk11 
-    name: My Job
+    name: Build and test
     steps:
     - name: Download Repo
       uses: actions/download-artifact@v3
@@ -27,3 +27,8 @@ jobs:
       run: chmod +x ci/build-app.sh && ci/build-app.sh
     - name: Test
       run: chmod +x ci/unit-test-app.sh && ci/unit-test-app.sh
+    - name: Upload Repo
+      uses: actions/upload-artifact@v3
+      with: 
+        name: code
+        path: . 
