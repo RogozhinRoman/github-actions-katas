@@ -1,7 +1,7 @@
 name: Java CI
 on: push
 env:
-  docker_username: ${{ lowercase(github.actor) }}
+  docker_username: $(echo 'console.log("${{ github.actor }}".toLowerCase())' | node -)
   docker_password: ${{ secrets.GITHUB_TOKEN }}
   GIT_COMMIT: ${{ github.sha }}
 jobs:
