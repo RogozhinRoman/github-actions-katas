@@ -1,5 +1,13 @@
-name: Java CI
-on: push
+name: Java CI123
+on: 
+  pull_request:
+    types:
+      - opened
+    branches:
+      - 'main'
+  push:
+    branches:
+      - 'main'
 env:
   docker_username: rogozhinroman
   docker_password: ${{ secrets.GITHUB_TOKEN }}
