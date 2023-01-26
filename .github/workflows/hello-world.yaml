@@ -2,6 +2,7 @@ name: Java CI
 on: push
 jobs:
   Clone-down:
+    name: Clone repo
     runs-on: ubuntu-latest
     steps:
       - name: Clone-down
